@@ -1,5 +1,13 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        contact_company: 'Evaluation'
+        contact_adress: '101 rue compliqué'
+        contact_zip: '59130'
+        contact_city: 'Lambersart'
+        contact_phone: '03.20.45.52.63'
+        contact_mail: 'contact@evaluation.com'
+    form_themes: ['bootstrap_5_layout.html.twig']
 
 when@test:
     twig:
