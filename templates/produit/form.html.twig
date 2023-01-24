@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Créer un produit {% endblock %}
+
+{% block body %}
+
+    {{ form_start(produitForm) }}
+
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(produitForm.title) }}
+        </div>
+        <div class="col-3">
+            {{ form_row(produitForm.city, {
+                'label': 'Ville'
+            }) }}
+        </div>
+        <div class="col-3">
+            {{ form_row(produitForm.postal_code, {
+                'label': 'code postal',
+                'attr': {
+                    'placeholder': 'Ex: 59130'
+                }
+            }) }}
+        </div>
+        <div class="row">
+            <div class="col-6">
+                {{ form_row(produitForm.price) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(produitForm.description) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                {{ form_row(produitForm.img, {
+                    'label': 'Image ( non obligatoire)'
+                }) }}
+            </div>
+            <div class="col-4">
+                {{ form_row(produitForm.alt, {
+                    'label': 'Texte Alternatif'
+                })}}
+            </div>
+
+        <div class="row">
+            <div class="col-12 text-end my-3">
+                <a href="{{ path('produit') }}" class="btn btn-outline-danger me-3">Annuler</a>
+                <button class="btn btn-success">Créer</button>
+            </div>
+        </div>
+
+    </div>
+
+    {{ form_end(produitForm) }}
+
+{% endblock %}
